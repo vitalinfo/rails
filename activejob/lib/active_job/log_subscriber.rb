@@ -128,7 +128,7 @@ module ActiveJob
       end
 
       def scheduled_at(event)
-        Time.at(event.payload[:job].scheduled_at).utc
+        Time.at(event.payload[:job].scheduled_at).utc.to_fs
       end
 
       def logger
